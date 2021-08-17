@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Palindrome</title>
+	<style type="text/css">
+		body
+		{
+			font:10px sans-serif;
+		}
+	</style>
+	<script type="text/javascript">
+		function palindrome()
+		{
+			var initial = prompt("Please enter a 3 digit string to check whether it is a palindrome:", ""); // Get the inputted string
+			var palin = new Array(); // Empty array to write the individual palindrome data to ... 
+			
+			while (initial.length != 3) // Create a loop for error checking relating to the length
+			{
+				alert("You did not enter a 3 character digit! All palindromes that this calculator can solve are 3 digits!")
+				initial = prompt("Please enter a 3 digit string to check whether it is a palindrome:", ""); // Ask for the user to re-enter the value again
+			} // end while
+
+			for (var i = 0; i <= initial.length -1; i++) { // Created a potential loop to pull off and isolate individual characters
+				// alert(initial.charAt(i)); Note that the charAt functionality enables you to pick off numbers
+				palin[i] = initial.charAt(i); // Add each character to a new array (note that this step could be skipped)
+			};
+			
+			// Note that I did not check whether the numbers were numeric ... I just checked whether the strings matched
+			if (palin[0] == palin[2]) 
+			 // Check whether the first digit equals the 3rd digit
+				
+				{
+					document.write("The number that you entered was " + initial + ".");
+					document.write("<br>This number is a palindrome!")
+				}
+			
+			else
+			{
+				document.write("The number that you entered was " + initial + ".");
+				document.write("<br>This number is NOT a palindrome!")
+			};
+
+		}; // end main function 
+	</script>
+</head>
+<body>
+	<h1>Welcome!</h1>
+	<p> Enter a 3 digit string to check whether an the string is a palindrome.</p>
+    <p> A palindrome is a number that reads the same backwards and forwards.</p>
+	<hr> <!-- Input a horizontal rule -->
+	<input type = "button" id = "palindrome" value = "Click to start the program" onclick = "palindrome();" />
+</body>
+</html>
